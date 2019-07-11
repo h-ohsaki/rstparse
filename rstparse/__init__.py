@@ -33,7 +33,7 @@ DIRECTIVES_TO_INCLUDE = [
     'autodata'
 ]
 
-class RSTParser:
+class Parser:
     def __init__(self, file=None):
         self.lines = []
         self.indices = {}
@@ -171,12 +171,12 @@ class RSTParser:
 
 def main():
     for file in sys.argv[1:]:
-        rst = RSTParser()
+        rst = Parser()
         with open(file) as f:
             rst.read(f)
         rst.parse()
         for key, val in rst.indices.items():
-            print(key, val)
+            print('{}: {}'.format(key, val))
         for n, line in enumerate(rst.lines):
             print('{:5} {}'.format(n, line))
 
