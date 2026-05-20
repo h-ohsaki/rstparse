@@ -102,7 +102,10 @@ class Parser:
         name = self.resolve_name(name)
         if name is None:
             return []
-        doc = pydoc.render_doc(name)
+        try:
+            doc = pydoc.render_doc(name)
+        except TypeError:
+            return []
         lines = doc.splitlines()
         # discard the header lines
         return lines[2:]
@@ -137,7 +140,10 @@ class Parser:
             self.track_context(line)
             key, val = self.parse_directive(line)
             if key and key.startswith('auto') and val:
-                lines += self.pydoc_lines_for(val)
+                try:
+                    lines += self.pydoc_lines_for(val)
+                except ValueError:
+                    pass
         self.lines = lines
 
     def register_index(self, name, lineno=None, module=None, cls=None):

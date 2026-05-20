@@ -7,9 +7,9 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name="rstparse",
-    version="1.0",
+    version="1.1",
     author="Hiroyuki Ohsaki",
-    author_email="ohsaki@lsnl.jp",
+    author_email="code@lsnl.jp",
     description="expand and analyze RST (reStructureText) documents with auto*-directives",
     long_description=long_description,
     long_description_content_type="text/markdown",

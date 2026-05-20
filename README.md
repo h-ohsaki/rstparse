@@ -69,4 +69,4 @@ The latest version of **rstparser** module is available at PyPI
 
 # AUTHOR
 
-Hiroyuki Ohsaki <ohsaki[atmark]lsnl.jp>
+Hiroyuki Ohsaki <code[atmark]lsnl.jp>
